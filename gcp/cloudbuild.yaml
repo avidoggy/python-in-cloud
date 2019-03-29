@@ -11,6 +11,8 @@ steps:
     name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/python-in-cloud']
     timeout: 120s
+
+### step structure
 # - name: string
 #   args: [string, string, ...]
 #   env: [string, string, ...]
@@ -21,15 +23,18 @@ steps:
 #   secretEnv: string
 #   volumes: object(Volume)
 #   timeout: string (Duration format)
+### step structure
+
 # timeout: 120s
 # logsBucket: string
-# options:
+options:
 #  sourceProvenanceHash: enum(HashType)
 #  machineType: enum(MachineType)
 #  diskSizeGb: string (int64 format)
 #  substitutionOption: enum(SubstitutionOption)
-logStreamingOption: STREAM_ON
+  logStreamingOption: STREAM_ON
 #  logging: enum(LoggingMode)
+
 # substitutions: map (key: string, value: string)
 # tags: [string, string, ...]
 # secrets: object(Secret)
