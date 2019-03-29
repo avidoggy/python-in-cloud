@@ -7,7 +7,7 @@ steps:
     name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/$PROJECT_ID/python-in-cloud', '.']
     timeout: 120s
-  - id: 'build-image'
+  - id: 'push-image-to-gcr'
     name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/python-in-cloud']
     timeout: 120s
