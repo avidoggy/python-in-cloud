@@ -1,7 +1,6 @@
 FROM python:3.6-stretch
 
-USER anonymous
-WORKDIR /home/anonymous
+WORKDIR /opt
 
 ADD requirements.txt ./
 
