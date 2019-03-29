@@ -1,0 +1,38 @@
+steps:
+  - id: 'clone-github'
+    name: 'gcr.io/cloud-builders/git'
+    args: ['clone', 'https://github.com/GoogleCloudPlatform/cloud-builders']
+    timeout: 10s
+  - id: 'build-image'
+    name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/python-in-cloud', '.']
+    timeout: 120s
+  - id: 'build-image'
+    name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/python-in-cloud']
+    timeout: 120s
+# - name: string
+#   args: [string, string, ...]
+#   env: [string, string, ...]
+#   dir: string
+#   id: string
+#   waitFor: string
+#   entrypoint: string
+#   secretEnv: string
+#   volumes: object(Volume)
+#   timeout: string (Duration format)
+# timeout: 120s
+# logsBucket: string
+# options:
+#  sourceProvenanceHash: enum(HashType)
+#  machineType: enum(MachineType)
+#  diskSizeGb: string (int64 format)
+#  substitutionOption: enum(SubstitutionOption)
+logStreamingOption: STREAM_ON
+#  logging: enum(LoggingMode)
+# substitutions: map (key: string, value: string)
+# tags: [string, string, ...]
+# secrets: object(Secret)
+# images:
+# - [string, string, ...]
+# artifacts: object (Artifacts)
